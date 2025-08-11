@@ -7,16 +7,18 @@
     <title>Login - Saara AI</title>
 </head>
 <body>
-<header style="background-color:#333; padding: 10px;">
-  <nav style="display: flex; justify-content: center; gap: 20px;">
-    <a href="index.html" style="color:white; text-decoration:none;">Home</a>
-    <a href="about.html" style="color:white; text-decoration:none;">About Us</a>
-    <a href="login.html" style="color:white; text-decoration:none;">Login</a>
-  </nav>
-</header>
-<main style="padding:20px;">
     <h1>Login</h1>
-    <p>Please login to access Saara AI.</p>
-</main>
+    <form action="#" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+    <nav>
+        <a href="home.html">Home</a> |
+        <a href="about.html">About Us</a> |
+        <a href="login.html">Login</a>
+    </nav>
 </body>
 </html>
