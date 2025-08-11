@@ -49,3 +49,20 @@ p {
     text-decoration: none;
     font-size: 1em;
 }
+/* Default background settings */
+body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Mobile optimization */
+@media screen and (max-width: 768px) {
+  body {
+    background-size: contain; /* prevent zoom-in */
+    background-position: top;
+    background-attachment: scroll;
+    filter: brightness(1.2); /* make it lighter */
+  }
+}
