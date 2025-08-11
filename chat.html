@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saara AI Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #cc2b5e, #753a88);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+    }
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+    .message {
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    form {
+      display: flex;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background: #ffffff33;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffffff55;
+    }
+  </style>
+</head>
+<body>
+  <header>Saara AI Chat</header>
+  <main>
+    <div class="messages" id="chatBox"></div>
+    <form id="chatForm">
+      <input type="text" id="messageInput" placeholder="Type your message..." required />
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('chatForm');
+    const input = document.getElementById('messageInput');
+    const chatBox = document.getElementById('chatBox');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const userMessage = input.value.trim();
+      if (userMessage === '') return;
+
+      const userDiv = document.createElement('div');
+      userDiv.className = 'message';
+      userDiv.textContent = 'You: ' + userMessage;
+      chatBox.appendChild(userDiv);
+
+      const botDiv = document.createElement('div');
+      botDiv.className = 'message';
+      botDiv.textContent = 'Saara AI: Thank you for your message ❤️';
+      chatBox.appendChild(botDiv);
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+      input.value = '';
+    });
+  </script>
+</body>
+</html>
